@@ -1,6 +1,7 @@
 ## StudyAI - AI MCQ Generator (Flask Project)
 
 An AI-powered web application that generates MCQ questions automatically using LLM (Ollama / LLaMA3).
+
 Built using Flask + Python + HTML/CSS + JavaScript.
 
 ##### Features
@@ -25,7 +26,7 @@ Ollama (LLaMA3 model)
 
 📦 Installation Guide
 1️⃣ Clone the Repository
-git clone https://github.com/Anupamshraddha/studyai.git
+git clone (https://github.com/Anupamshraddha/AI-Study-Assistent)
 cd studyai
 
 
