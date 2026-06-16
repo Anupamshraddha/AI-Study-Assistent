@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Login - StudyAI</title>
+
+
+</head>
+<style>
+    /* ===== GLOBAL ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+}
+
+/* ===== FORM CONTAINER ===== */
+.form-box {
+    width: 380px;
+    padding: 35px 30px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 18px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+    text-align: center;
+
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+/* ===== TITLE ===== */
+.form-box h1 {
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* ===== INPUTS ===== */
+.form-box input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+
+    border: none;
+    border-radius: 10px;
+
+    outline: none;
+    font-size: 14px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+
+    transition: 0.3s;
+}
+
+.form-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-box input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.02);
+}
+
+/* ===== BUTTON ===== */
+.form-box button {
+    width: 100%;
+    padding: 12px;
+
+    margin-top: 15px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.form-box button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.4);
+}
+
+/* ===== TEXT ===== */
+.form-box p {
+    margin-top: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.form-box a {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-box a:hover {
+    text-decoration: underline;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+
+<body>
+
+
+<div class="form-box">
+
+
+<h1>Login 🤖</h1>
+
+
+<form method="POST" action="/login">
+
+
+
+<input 
+type="email"
+name="email"
+placeholder="Email"
+required>
+
+
+
+<input 
+type="password"
+name="password"
+placeholder="Password"
+required>
+
+
+
+<button type="submit">
+Login
+</button>
+
+
+
+<p>
+New user?
+<a href="/signup">
+Create Account
+</a>
+</p>
+
+<p>
+               
+<a href="/">Back</a>
+                
+</p>
+
+
+
+</form>
+
+
+</div>
+
+
+</body>
+
+</html>
