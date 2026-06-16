@@ -323,116 +323,84 @@ def notes():
         "notes.html"
     )
 
-import ollama
+from flask import Flask, render_template, request
+from flask_login import login_required
 import json
 import re
+import ollama
 
+
+
+
+
+@app.route("/mcq", methods=["GET", "POST"])
 @login_required
-@app.route("/mcq", methods=["GET","POST"])
 def mcq():
 
-    if request.method=="POST":
+    if request.method == "POST":
 
-        subject=request.form["subject"]
-        topic=request.form["topic"]
-        level=request.form["difficulty"]
-        count=request.form["count"]
+        subject = request.form.get("subject", "")
+        topic = request.form.get("topic", "")
+        level = request.form.get("difficulty", "")
+        count = request.form.get("count", "5")
 
-
-        prompt=f"""
-You are an MCQ generator.
-
+        prompt = f"""
 Create {count} MCQ questions.
 
 Subject: {subject}
 Topic: {topic}
 Difficulty: {level}
 
-Return ONLY JSON.
-No text.
-No markdown.
-No ```.
-
-JSON format:
+Return ONLY valid JSON in this format:
 
 [
  {{
-  "question":"Question here",
-  "options":
-  [
+  "question": "Question here",
+  "options": [
    "option 1",
    "option 2",
    "option 3",
    "option 4"
   ],
-  "answer":"correct option",
-  "explanation":"short explanation"
+  "answer": "correct option",
+  "explanation": "short explanation"
  }}
 ]
-
 """
 
-
         try:
-
             response = ollama.chat(
-
                 model="llama3",
-
                 messages=[
                     {
-                    "role":"user",
-                    "content":prompt
+                        "role": "system",
+                        "content": "You must return ONLY valid JSON. No explanation, no markdown, no extra text."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
                     }
                 ]
-
             )
 
-
-            text=response["message"]["content"]
+            text = response["message"]["content"]
 
             print("========== AI RESPONSE ==========")
             print(text)
 
+            # 🔥 safer JSON extraction
+            match = re.search(r"\[.*\]", text, re.DOTALL)
 
+            if not match:
+                raise Exception("AI did not return valid JSON")
 
-            # find JSON
+            json_data = match.group()
+            quiz = json.loads(json_data)
 
-            start=text.find("[")
-
-            end=text.rfind("]")
-
-
-
-            if start == -1 or end == -1:
-
-                raise Exception(
-                    "AI did not return JSON"
-                )
-
-
-            json_data=text[start:end+1]
-
-
-            quiz=json.loads(json_data)
-
-
-
-            return render_template(
-                "quiz.html",
-                quiz=quiz
-            )
-
-
+            return render_template("quiz.html", quiz=quiz)
 
         except Exception as e:
-
-
-            return render_template(
-                "mcq.html",
-                error=str(e)
-            )
-
+            return render_template("mcq.html", error=str(e))
 
 
     return render_template("mcq.html")
