@@ -1,0 +1,589 @@
+/* =========================
+   GLOBAL STYLE
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
+}
+
+
+body{
+
+    background:#020617;
+    color:white;
+    min-height:100vh;
+
+}
+
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+
+.container{
+
+    width:90%;
+    margin:auto;
+
+}
+
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.navbar{
+
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    background:#020617;
+
+}
+
+
+.logo{
+
+    font-size:28px;
+    font-weight:bold;
+    color:#38bdf8;
+
+}
+
+
+.nav-links a{
+
+    margin-left:25px;
+    font-size:16px;
+}
+
+
+
+.nav-links a:hover{
+
+    color:#38bdf8;
+
+}
+
+
+.btn{
+
+    background:#2563eb;
+    padding:12px 25px;
+    border-radius:30px;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+
+
+.btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+/* =========================
+ HERO SECTION
+========================= */
+
+
+.hero{
+
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    padding:60px 8%;
+
+}
+
+
+.hero-content{
+
+    width:50%;
+
+}
+
+
+
+.hero h1{
+
+    font-size:60px;
+    line-height:1.1;
+
+}
+
+
+.hero span{
+
+    color:#38bdf8;
+
+}
+
+
+.hero p{
+
+    color:#cbd5e1;
+    font-size:20px;
+    margin:25px 0;
+
+}
+
+
+
+
+.ai-box{
+
+
+    width:450px;
+    background:#1e293b;
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 0 30px #2563eb;
+
+}
+
+
+.chat-user{
+
+    background:#2563eb;
+    padding:15px;
+    border-radius:15px;
+    margin-top:20px;
+
+}
+
+
+.chat-ai{
+
+    background:#334155;
+    padding:15px;
+    border-radius:15px;
+    margin-top:15px;
+
+}
+
+
+
+/* =========================
+ FEATURES
+========================= */
+
+
+.features{
+
+    padding:80px 8%;
+    text-align:center;
+
+}
+
+
+
+.features h2{
+
+    font-size:40px;
+
+}
+
+
+
+.feature-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    margin-top:40px;
+
+}
+
+
+
+.card{
+
+    background:#1e293b;
+    padding:30px;
+    border-radius:20px;
+    transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-10px);
+    background:#334155;
+
+}
+
+
+
+.card h2{
+
+    font-size:40px;
+
+}
+
+
+
+/* =========================
+ LOGIN / SIGNUP
+========================= */
+
+
+.form-container{
+
+
+    width:400px;
+    margin:80px auto;
+    background:#1e293b;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 0 25px #0ea5e9;
+
+}
+
+
+
+.form-container h1{
+
+    text-align:center;
+    margin-bottom:30px;
+
+}
+
+
+
+input,select,textarea{
+
+
+    width:100%;
+    padding:15px;
+    margin:12px 0;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:#334155;
+    color:white;
+
+}
+
+
+
+input::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+
+
+.form-btn{
+
+
+    width:100%;
+    padding:15px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:15px;
+    cursor:pointer;
+
+}
+
+
+
+.form-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+
+
+
+/* =========================
+ DASHBOARD
+========================= */
+
+
+.dashboard{
+
+
+    padding:50px 8%;
+
+}
+
+
+
+.dashboard h1{
+
+    font-size:45px;
+
+}
+
+
+
+.dashboard-grid{
+
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:40px;
+
+}
+
+
+
+.dashboard-card{
+
+
+    background:#1e293b;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+    font-size:20px;
+    transition:.3s;
+
+}
+
+
+
+.dashboard-card:hover{
+
+
+    transform:scale(1.05);
+    background:#2563eb;
+
+}
+
+
+
+
+/* =========================
+ CHAT PAGE
+========================= */
+
+
+.chat-container{
+
+
+    width:70%;
+    margin:auto;
+    padding:40px;
+
+}
+
+
+
+.message{
+
+
+    background:#334155;
+    padding:20px;
+    margin:20px 0;
+    border-radius:15px;
+
+}
+
+
+
+.user-message{
+
+
+    background:#2563eb;
+
+}
+
+
+
+
+
+/* =========================
+ PDF NOTES
+========================= */
+
+
+.upload-box{
+
+
+    width:600px;
+    margin:60px auto;
+    background:#1e293b;
+    padding:40px;
+    text-align:center;
+    border-radius:25px;
+
+}
+
+
+
+
+/* =========================
+ FLASHCARDS
+========================= */
+
+
+.flash-grid{
+
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    padding:50px;
+
+}
+
+
+
+.flashcard{
+
+
+    background:#1e293b;
+    padding:40px;
+    border-radius:20px;
+    text-align:center;
+
+}
+
+
+
+
+
+/* =========================
+ PLANNER
+========================= */
+
+
+.task{
+
+
+    background:#1e293b;
+    padding:25px;
+    margin:20px;
+    border-radius:15px;
+
+}
+
+
+
+
+/* =========================
+ PROFILE
+========================= */
+
+
+.profile{
+
+
+    width:500px;
+    margin:60px auto;
+    background:#1e293b;
+    padding:40px;
+    border-radius:25px;
+    text-align:center;
+
+}
+
+
+.profile img{
+
+    width:120px;
+    height:120px;
+    border-radius:50%;
+
+}
+
+
+
+
+/* =========================
+ FOOTER
+========================= */
+
+
+footer{
+
+
+    background:#020617;
+    padding:30px;
+    text-align:center;
+    margin-top:80px;
+    color:#94a3b8;
+
+}
+
+
+
+
+
+/* =========================
+ MOBILE RESPONSIVE
+========================= */
+
+
+@media(max-width:900px){
+
+
+.hero{
+
+    flex-direction:column;
+
+}
+
+
+.hero-content{
+
+    width:100%;
+
+}
+
+
+.hero h1{
+
+    font-size:40px;
+
+}
+
+
+.ai-box{
+
+    width:100%;
+    margin-top:30px;
+
+}
+
+
+
+.feature-grid,
+.dashboard-grid,
+.flash-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.form-container{
+
+    width:90%;
+
+}
+
+
+
+}

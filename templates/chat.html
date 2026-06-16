@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>StudyAI Assistant</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #020617;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #1e293b;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        /* Chatbot wrapper area */
+        #webchat-container {
+            margin-top: 40px;
+            width: 100%;
+            height: 600px;
+            border-radius: 20px;
+            background: #0f172a;
+            overflow: hidden; /* Ensures the chatbot doesn't bleed past the rounded borders */
+            position: relative;
+        }
+
+        /* Forces the embedded Botpress iframe/shadow DOM to fill your container */
+        #webchat-container iframe, 
+        #webchat-container div {
+            width: 100% !important;
+            height: 100% !important;
+            max-height: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🤖 StudyAI Assistant</h1>
+        <p class="subtitle">Your personal AI learning companion</p>
+        
+        <div id="webchat-container"></div>
+    </div>
+
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/06/14/17/20260614174352-08BKETUF.js" defer></script>
+
+    <script>
+        window.addEventListener("load", () => {
+            window.botpress.init({
+                configUrl: "https://files.bpcontent.cloud/2026/06/14/17/20260614174352-FFHHC4QM.json",
+                // CRITICAL: This tells Botpress to load INSIDE your container instead of floating on the screen
+                container: "#webchat-container", 
+                layout: "embedded" 
+            });
+
+            window.botpress.on("webchat:ready", () => {
+                window.botpress.open();
+            });
+        });
+    </script>
+
+</body>
+</html>
