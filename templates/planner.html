@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>AI Study Planner</title>
+
+
+<style>
+
+body{
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+font-family:Arial;
+
+padding:30px;
+
+}
+
+
+
+.container{
+
+max-width:500px;
+
+background:white;
+
+margin:auto;
+
+padding:30px;
+
+border-radius:25px;
+
+}
+
+
+
+input,select,button{
+
+width:100%;
+
+padding:14px;
+
+margin:10px 0;
+
+border-radius:12px;
+
+}
+
+
+
+button{
+
+background:#667eea;
+
+color:white;
+
+border:none;
+
+font-size:18px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+
+<div class="container">
+
+
+<h1>
+📚 AI Study Planner
+</h1>
+
+
+<form method="POST">
+
+
+<input 
+name="subject"
+placeholder="Subject"
+required>
+
+
+<input 
+name="topics"
+placeholder="Topics (comma separated)"
+required>
+
+
+<input
+type="date"
+name="exam"
+required>
+
+
+
+<input
+type="number"
+name="hours"
+placeholder="Hours per day"
+required>
+
+
+
+<button>
+✨ Create AI Plan
+</button>
+
+<br></br>
+<a href="/dashboard"> Back</a>
+</form>
+
+
+
+{% if error %}
+
+<p style="color:red">
+{{error}}
+</p>
+
+{% endif %}
+
+
+
+</div>
+
+
+</body>
+
+</html>
